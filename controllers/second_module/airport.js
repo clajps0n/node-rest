@@ -1,5 +1,5 @@
 //modelo
-var Airport = require("../models/airport");
+var Airport = require("../../models/airport");
 
 function selectAirport(req,res)
 {
@@ -123,7 +123,7 @@ function getAirportsGeoJSON(req,res)
             "title": airports[i].acronym,
             "description": airports[i].name,
             "marker-color": "#fc4353",
-            "marker-size": "medium",
+            "marker-size": "small",
             "marker-symbol": "monument"
           },
           geometry : 

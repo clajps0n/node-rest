@@ -1,5 +1,5 @@
 //modelo
-var Flight = require("../models/flight");
+var Flight = require("../../models/flight");
 
 function selectFlight(req,res)
 {
@@ -36,20 +36,26 @@ function selectFlights(req,res)
   });
 }
 
+function selectCurrentFlights(req,res)
+{
+  Flight.find({hidden:false},
+  function(err, flights)
+  {
+    if(err) return res.status(500).send({message:`Error al pedir recurso de la db: ${err}`});
+    if(!flights) return res.status(404).send({message:`El vuelo requerido no se encuentra en db: ${flights}`});
+    res.status(200).send({flights});
+  });
+}
+
 
 
 function insertFlight(req,res)
 {
-  console.log('POST ./models/flight');
-  console.log(req.body);
   var flight = new Flight();
-  //flight = req.body;
   flight.flightNumber = req.body.flightNumber;
   flight.origin = req.body.origin;
   flight.destination = req.body.destination;
   flight.aircraftNumber = req.body.aircraftNumber;
-  //flight.OOOIreportHistory = req.body.OOOIreportHistory;
-  
   flight.save((err, flightDoc) =>
   {
     if(err) res.status(500).send({message: `Error al guardar en db: ${err}`});
@@ -194,7 +200,7 @@ function getLastPosGeoJSON(req,res)
                       type: "Feature",
                       properties:
                       {
-                          "title" : flights[i].flightNumber,
+                          "title" : '<h1><a id="details-ref" class="ui-btn ui-btn-inline ui-corner-all ui-shadow">'+flights[i].flightNumber+'</a></h1>',
                           "description" : flights[i].aircraftNumber,
                           "marker-color": "#2E2EFE",
                           "marker-size": "medium",
@@ -262,6 +268,7 @@ function getFlightGeoJSON(req,res)
 module.exports = {
     selectFlight,
     selectFlights,
+    selectCurrentFlights,
     insertFlight,
     updateFlight,
     addOOOIReport,

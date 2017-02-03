@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html ng-app="appPost">
+    <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="generator" content="Mobirise v2.14.2, mobirise.com">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="shortcut icon" href="../static/img/aircraft-01.svg" type="image/x-icon">
+      <meta name="description" content="">
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:700,400&amp;subset=cyrillic,latin,greek,vietnamese">
+      <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+
+      <link rel="stylesheet" href="../assets/mobirise/css/mbr-additional.css" type="text/css">
+      <script src="../assets/web/assets/jquery/jquery.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+      
+      <script type="text/javascript" src="post.js"></script>
+      
+        <title>Airplane client</title>
+    </head>
+    <body ng-controller="postController">
+        <section>
+        <nav class="navbar">
+        <div class="container">
+            <div class="mbr-table">
+                <div class="mbr-table-cell">
+                    <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm">
+                        <li class="nav-item"><a class="navbar-caption" href="http.html">HTTP</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        </nav>
+        </section>
+        <section>
+        <div class="container">
+          <div class="panel panel-default">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                <div class="panel-fluid">
+                    <h1>Envio de mensajes</h1>
+                    <hr>
+                    <br>
+                    <div class="form-group">
+                        <label for="">Message:</label>
+                        <textarea ng-model="newPost.message" class="form-control" rows="2"></textarea>
+                    </div>
+                    <hr>
+                    <button ng-click="addPost()"class="btn btn-success" type="button">SEND</button>
+                </div>
+                    
+                <hr>
+                
+            </div>
+            </div>
+        </div>
+            
+        <div class="container">
+          <div class="panel panel-default">
+            <div class="container">
+            <div class="panel">
+            <div class="col-md-12">
+                <div class="col-md-6">
+                   <ul>
+                       <li ng-repeat="post in posts">
+                           <p>ACCARS: </p>
+                           <p>{{post.message}}</p>
+                       </li>
+                   </ul>
+                </div>
+                <div class="col-md-6">
+                   <ul>
+                       <li ng-repeat="res in responses">
+                           <p>Respuesta: </p>
+                           <p>{{res.message}}</p>
+                       </li>
+                       
+                   </ul>
+                </div>
+            </div>
+            </div>
+            </div>
+          </div>
+        </div>
+            
+            
+        </section>
+        <section>
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="panel-fluid">
+                    <h1>ACCARS reports</h1>
+                    <hr>
+                    <ul>
+                        <li>QU ANPOCFC .DDLXCXA 260000 A80 FI FC8045/AN HK-0000 DT DDL BOG 260000 M02A - 1001 OUTRP 1001/ SKSP/SKBO HK-0000 /OUT 0000/FOB 200/BRD /UNT LITERS /TYP A</li>
+                        <li>QU ANPOCFC .DDLXCXA 260005 A80 FI FC8152/AN HK-0000 DT DDL BOG 260000 M01A - 1101 OFFRP 1001/ SKSP/SKBO HK-0000 /OUT 2230/OFF 2305/FOB 180/ETA</li>
+                        <li>QU ANPOCFC .DDLXCXA 260000 A80 FI FC8152/AN HK-0000 DT DDL CTG 260000 M02A - 1201 ONRP 1001/ SKSP/SKBO HK-0000 /ON 0006/FOB 044</li>
+                        <li>QU ANPOCFC .DDLXCXA 260000 A80 FI FC8152/AN HK-0000 DT DDL CTG 260000 M02A - 1301 INRP 1001/ SKSP/SKBO HK-0000 /ON 0006/IN 0013/FOB 0040</li>
+                        <li>QU ANPOCFC .DDLXCXA 260000 A80 FI FC8138/AN HK-0000 DT DDL SMR 260000 M55A - 3N01 POSRPT 1001/26 SKSP/SKBO HK-0000 /UTC 001000/POS N09216W074273/ALT +35000/MCH 749/FOB 00190</li>
+                        <li>QU ANPOCFC .DDLXCXA 260000 WXR FI FC8149/AN HK-0000 DT DDL MTR 260000 M50A - 001 WXRQ 1001/03 SKSP/SKBO HK-0000 /TYP 1/STA SKRG/STA SKBO</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        </section>
+    </body>
+
+  <script src="../assets/smooth-scroll/SmoothScroll.js"></script>
+</html>

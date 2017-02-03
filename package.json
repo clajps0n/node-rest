@@ -6,16 +6,23 @@
   "repository": "",
   "author": "Mostafa Eweda <mo.eweda@gmail.com>",
   "dependencies": {
+    "angular-chart.js": "^1.1.1",
     "async": "~0.2.8",
     "bluebird": "^3.4.7",
     "body-parser": "^1.15.2",
     "chai": "^3.5.0",
+    "chart.js": "^2.4.0",
+    "cheerio": "^0.22.0",
     "express": "~3.2.4",
     "get-json": "0.0.3",
+    "jsdom": "^9.9.1",
     "maki": "^2.1.0",
     "mapbox": "^1.0.0-beta5",
     "mongoose": "^4.7.6",
-    "socket.io": "~0.9.14"
+    "request": "^2.79.0",
+    "scraperjs": "^1.2.0",
+    "socket.io": "~0.9.14",
+    "url-parse": "^1.1.7"
   },
   "devDependencies": {
     "nodemon": "^1.11.0"
